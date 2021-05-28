@@ -36,6 +36,7 @@ public interface LetterListContract {
     void onDataFromNextScreen(String data);
     void onRestartScreen(String data);
     void onDataFromPreviousScreen(String data);
+    void addLetra();
   }
 
 
