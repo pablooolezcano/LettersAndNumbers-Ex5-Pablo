@@ -53,15 +53,15 @@ public class NumberListPresenter implements NumberListContract.Presenter {
   public void onResume() {
     // Log.e(TAG, "onResume()");
 
-    /*
+
     // use passed state if is necessary
-    NumberListState savedState = router.getStateFromNextScreen();
+    LettersToNumbersState savedState = getStateFromPreviousScreen();
     if (savedState != null) {
 
       // update the model if is necessary
-      model.onDataFromNextScreen(savedState.data);
+      model.onDataFromPreviousScreen(savedState.data);
     }
-    */
+
 
     // call the model and update the state
     state.data = model.getStoredData();
@@ -124,8 +124,8 @@ public class NumberListPresenter implements NumberListContract.Presenter {
   @Override
   public void onClickNumberListButton() {
     // Log.e(TAG, "onClickNumberListButton()");
-    model.addNumbers();
     NumberData num = new NumberData();
+    model.addNumbers();
     num.number = Integer.parseInt(model.getStoredData());
     state.datasource.add(num);
     onResume();

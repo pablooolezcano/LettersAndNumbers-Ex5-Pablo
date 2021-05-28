@@ -32,6 +32,7 @@ public class NumberListModel implements NumberListContract.Model {
   @Override
   public void onDataFromPreviousScreen(String data) {
     // Log.e(TAG, "onDataFromPreviousScreen()");
+    this.data = data;
   }
 
   @Override
@@ -39,21 +40,25 @@ public class NumberListModel implements NumberListContract.Model {
 
     NumberData numero = new NumberData();
 
-
     if(cuenta == 0){
       numero.number = 1;
-    }
-    if(cuenta == 1){
-      numero.number = 2;
-    }
-    if(cuenta == 2){
-      numero.number = 3;
-    }
-    if(cuenta == 3){
-      numero.number = 4;
+    } else{
+      int num = Integer.parseInt(getStoredData());
+      num++;
+      numero.number = num;
     }
     data = numero.getValue();
     cuenta++;
+//    if(cuenta == 1){
+//      numero.number = 2;
+//    }
+//    if(cuenta == 2){
+//      numero.number = 3;
+//    }
+//    if(cuenta == 3){
+//      numero.number = 4;
+//    }
+
 
 
 //    NumberData numero = new NumberData();
