@@ -34,6 +34,7 @@ public interface NumberListContract {
     void onDataFromNextScreen(String data);
     void onRestartScreen(String data);
     void onDataFromPreviousScreen(String data);
+    void addNumbers();
   }
 
 

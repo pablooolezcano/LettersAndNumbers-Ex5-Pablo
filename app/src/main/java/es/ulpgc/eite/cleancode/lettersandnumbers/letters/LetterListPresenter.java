@@ -109,10 +109,12 @@ public class LetterListPresenter implements LetterListContract.Presenter {
   public void onClickLetterListCell(LetterData data) {
     // Log.e(TAG, "onClickLetterListCell()");
 
+    LettersToNumbersState estado = new LettersToNumbersState();
 
 
 
 
+    passStateToNextScreen(estado);
     view.get().navigateToNextScreen();
   }
 

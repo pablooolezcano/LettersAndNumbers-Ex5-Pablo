@@ -74,6 +74,9 @@ public class NumberListPresenter implements NumberListContract.Presenter {
   @Override
   public void onBackPressed() {
     // Log.e(TAG, "onBackPressed()");
+    NumbersToLettersState estado = new NumbersToLettersState();
+    estado.data = state.data;
+    passStateToPreviousScreen(estado);
   }
 
   @Override
@@ -121,6 +124,11 @@ public class NumberListPresenter implements NumberListContract.Presenter {
   @Override
   public void onClickNumberListButton() {
     // Log.e(TAG, "onClickNumberListButton()");
+    model.addNumbers();
+    NumberData num = new NumberData();
+    num.number = Integer.parseInt(model.getStoredData());
+    state.datasource.add(num);
+    onResume();
   }
 
   @Override
